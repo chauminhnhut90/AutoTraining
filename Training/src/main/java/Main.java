@@ -4,12 +4,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
+/**
+ * @author trinhnguyen
+ **/
 public class Main {
 
 
     public static void main(String[] args) {
         // Step 0 :  Config Webdriver
-        System.setProperty("webdriver.chrome.driver", "/Users/macbook/Downloads/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/newuser/Documents/AutoTranning/chromedriver");
 
         // Step 1
         WebDriver webDriver = new ChromeDriver();
