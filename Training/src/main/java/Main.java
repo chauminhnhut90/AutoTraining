@@ -11,6 +11,8 @@ public class Main {
 
 
     public static void main(String[] args) {
+
+        //sua chromedriver dia chi
         // Step 0 :  Config Webdriver
         System.setProperty("webdriver.chrome.driver", "/Users/newuser/Documents/AutoTranning/chromedriver");
 
