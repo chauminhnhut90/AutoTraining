@@ -82,7 +82,7 @@ public class HW_82_100 {
         System.out.println("------------------");
 
         System.out.println("Bai 100:");
-        Bai_100(2,4,2); // vo nghiem: 232; Nghiem kep: 242
+        Bai_100(2,8,4); // vo nghiem: 232; Nghiem kep: 242
         System.out.println("------------------");
 
     }
@@ -366,27 +366,41 @@ public class HW_82_100 {
 
     /*Bài 100: Viết chương trình giải phương trình bậc 2  a*x*x + b*x + c = 0*/
     private static void Bai_100(double a, double b, double c){
-        double x1;
-        double x2;
-        double delta = b*b - 4*a*c;
-        if(delta < 0){
-            x1 = x2 = 0;
-            System.out.println("Phương trình vô nghiệm");
-        }else if(delta == 0){
-            x1 = x2 = -b/(2*a);
-            System.out.print("Phương trình có nghiệm kép: X1 = X2 = ");
-            System.out.println(x1);
-        }else if(delta > 0){
-            delta = Math.sqrt(delta);
-            x1 = (-b + delta)/(2*a);
-            x2 = (-b - delta)/(2*a);
-            System.out.println("Phương trình có hai nghiệm: ");
-            System.out.print("X1 = ");
-            System.out.println(x1);
-            System.out.print("X2 = ");
-            System.out.println(x2);
-        }
+        if(a == 0){
+            if(b == 0){
+                if (c == 0){
+                    System.out.println("Phương trình có vô số nghiệm.");
+                }else{
+                    System.out.println("Phương trình vô nghiệm.");
+                }
+            }else{
+                double x = -c/b;
+                System.out.print("Phương trình có nghiệm duy nhất: X = ");
+                System.out.println(x);
+            }
+        }else {
+            double x1;
+            double x2;
+            double delta = b*b - 4*a*c;
+            if(delta < 0){
+                x1 = x2 = 0;
+                System.out.println("Phương trình vô nghiệm");
+            }else if(delta == 0){
+                x1 = x2 = -b/(2*a);
+                System.out.print("Phương trình có nghiệm kép: X1 = X2 = ");
+                System.out.println(x1);
+            }else if(delta > 0){
+                double Delta = Math.sqrt(delta);
+                x1 = (-b + Delta)/(2*a);
+                x2 = (-b - Delta)/(2*a);
+                System.out.println("Phương trình có hai nghiệm: ");
+                System.out.print("X1 = ");
+                System.out.println(x1);
+                System.out.print("X2 = ");
+                System.out.println(x2);
+            }
 
+        }
     }
 
 
