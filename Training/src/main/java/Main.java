@@ -6,13 +6,16 @@ import org.openqa.selenium.interactions.Actions;
 
 /**
  * @author trinhnguyen
+ * <<<<<<< HEAD
  */
 
 public class Main {
 
     public static void main(String[] args) {
+
+        //sua chromedriver dia chi
         // Step 0 :  Config Webdriver
-        System.setProperty("webdriver.chrome.driver", "/Users/newuser/AutoTraining/Training/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/newuser/AutoTraining/chromedriver");
         // Step 1
         WebDriver webDriver = new ChromeDriver();
         webDriver.get("https://www.fahasa.com/");
@@ -36,8 +39,8 @@ public class Main {
 
         actions.click(email).perform();
 
-        actions.sendKeys(email,"trinhnguyen190488@gmail.com").perform();
-        actions.sendKeys(pass,"super@2019").perform();
+        actions.sendKeys(email, "trinhnguyen190488@gmail.com").perform();
+        actions.sendKeys(pass, "super@2019").perform();
         actions.click(btndangnhap).perform();
         sleep(5000);
 
@@ -70,9 +73,9 @@ public class Main {
         WebElement itemdisplay = webDriver.findElement(byItemdisplay);
 
         Boolean isDisplayed = itemdisplay.isDisplayed();
-        if (isDisplayed){
+        if (isDisplayed) {
             System.out.println("Verification successfull - San pham hien thi trong trang yeu thich");
-        }else {
+        } else {
             System.out.println("Verification failed");
         }
 
