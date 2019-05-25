@@ -1,20 +1,36 @@
 public class BaiTapVeNha7 {
 
     public static void main(String[] args) {
-
+        System.out.println("Bai82: Số lớn nhất trong 3 số thực a, b, c la");
         int bai82 = bai82(20, 7, 15);
         inSo(bai82);
 
+        System.out.println("Bai83: Nhập 2 số thực, kiểm tra xem chúng có cùng dấu hay không?");
         bai83(1, -80);
 
+        System.out.println("Bai84: Giải và biện luận phương trình bậc nhất ax + b = 0");
         int bai84 = bai84(20, 100);
         inSo(bai84);
 
+        System.out.println("Bai85: Tháng thuộc quý mấy trong năm?");
         bai85(12);
 
+        System.out.println("Bai86: Tính S(n) = 1^3 + 2^3 + … + N^3");
+        int bai86 = bai86(2);
+        inSo(bai86);
 
-        // hello
+        System.out.println("Bai87: Tìm số nguyên dương n nhỏ nhất sao cho 1 + 2 + … + n > 10000");
+        bai87();
 
+        System.out.println("Bai88: Xuất tất cả các ký tự từ A đến Z");
+        bai88();
+
+        System.out.println("Bai89: Tính tổng các giá trị lẻ nguyên dương nhỏ hơn N");
+        int bai89 = bai89(9);
+        inSo(bai89);
+
+        System.out.println("Bai100: In tất cả các số nguyên dương lẻ nhỏ hơn 100");
+        bai90();
 
     }
 
@@ -85,7 +101,55 @@ public class BaiTapVeNha7 {
 
     }
 
+    private static int bai86(int n){
+        //Bài 86: Tính S(n) = 1^3 + 2^3 + … + N^3
+        int s = 1;
+        for (int i = 1; i<=n; i++){
+            s += i*i*i;
+        }
+        return s;
+    }
 
+    private static void bai87(){
+        //Bài 87: Tìm số nguyên dương n nhỏ nhất sao cho 1 + 2 + … + n > 10000
+        int s=0;
+        int n;
+        for (n = 0; s<10000; n++){
+            s = s + n;
+        }
+        System.out.println(n);
+        System.out.println(s);
+
+
+    }
+
+    private static void bai88(){
+        //Bài 88: Hãy sử dụng vòng lặp for để xuất tất cả các ký tự từ A đến Z
+
+        for ( char alphabet = 'A'; alphabet < 'Z' ; alphabet++){
+            System.out.println(alphabet);
+        }
+    }
+
+    private static int bai89(int n){
+        //Bài 89: Viết chương trình tính tổng các giá trị lẻ nguyên dương nhỏ hơn N
+        int s = 0;
+        for (int i = 1;i<n; i+=2){
+            s = s + i;
+        }
+
+        return s;
+    }
+
+    private static void bai90(){
+        //Bài 91: In tất cả các số nguyên dương lẻ nhỏ hơn 100
+        for (int i = 1; i<100; i++){
+            if (i%2==1){
+                System.out.println(i);
+            }
+        }
+
+    }
 
     private static void inSo ( int number){
             System.out.println(number);
