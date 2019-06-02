@@ -13,12 +13,21 @@ public class Main {
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        HomePage homePage = new HomePage(driver);
-        homePage.navigate();
-        homePage.clickButtonTaiKhoan();
+        DichVuPage dichVuPage = new DichVuPage(driver);
+        dichVuPage.navigate();
 
-        AccountPage accountPage = new AccountPage(driver);
-        accountPage.enterUserPass("chauminhnhut90@gmail.com", "123456a@@");
-        accountPage.clickLogin();
+        String title1 = dichVuPage.getDKSDTText().toLowerCase();
+
+        dichVuPage.clickDKSD();
+
+        DieuKhoanSuDungPage dksd = new DieuKhoanSuDungPage(driver);
+        String title2 = dksd.getTtitle().toLowerCase();
+
+        if (title1.equals(title2)) {
+            System.out.println("OK");
+        } else {
+            System.out.println("Ko OK");
+        }
+
     }
 }

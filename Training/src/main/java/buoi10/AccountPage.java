@@ -2,6 +2,7 @@ package buoi10;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -18,6 +19,9 @@ public class AccountPage {
     @FindBy(id = "send2")
     public WebElement send2;
 
+    @FindBy(xpath = "//span[text()='Danh Mục']")
+    public WebElement danhmuc;
+
     public AccountPage(WebDriver driver) {
         this.webDriver = driver;
         PageFactory.initElements(webDriver, this);
@@ -30,5 +34,10 @@ public class AccountPage {
 
     public void clickLogin(){
         send2.click();
+    }
+
+    public void hoverDanhMuc(){
+        Actions actions = new Actions(webDriver);
+        actions.moveToElement(danhmuc).perform();
     }
 }
