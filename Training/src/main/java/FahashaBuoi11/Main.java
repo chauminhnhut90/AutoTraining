@@ -15,8 +15,11 @@ public class Main {
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-        getNoiBatItems(webDriver);
-        getDeals24HItems(webDriver);
+        //getNoiBatItems(webDriver);
+       // getDeals24HItems(webDriver);
+        NoiBatPage noiBatPage = new NoiBatPage(webDriver);
+        noiBatPage.moveTo();
+        noiBatPage.getItems();
 
     }
 
@@ -29,7 +32,7 @@ public class Main {
             noiBatPage.getItems();
             noiBatPage.clickNext();
         }
-        webDriver.quit();
+
     }
 
     public static void getDeals24HItems(WebDriver webDriver) {
