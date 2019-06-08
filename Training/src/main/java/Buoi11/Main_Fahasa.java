@@ -28,11 +28,11 @@ public class Main_Fahasa {
 
         NoiBatPage noiBatPage = new NoiBatPage(webDriver);
         noiBatPage.tabNoiBat();
-        noiBatPage.getProductName();
+        noiBatPage.getProduct();
 
         System.out.println("-----------------------------------------");
 
-        Deal24Page deal24Page = new Deal24Page(webDriver);
+        /*Deal24Page deal24Page = new Deal24Page(webDriver);
         deal24Page.TabDeal24();
         deal24Page.getProductName();
 
@@ -46,7 +46,7 @@ public class Main_Fahasa {
 
         LopHocMatNguPage lopHocMatNguPage = new LopHocMatNguPage(webDriver);
         lopHocMatNguPage.TabLopHocMatNgu();
-        lopHocMatNguPage.getProductName();
+        lopHocMatNguPage.getProductName();*/
 
 
 
