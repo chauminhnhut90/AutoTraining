@@ -1,4 +1,4 @@
-package buoi11;
+package buoi12;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -6,22 +6,28 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 @SuppressWarnings("all")
-public class Main {
+public class FahasaScript {
 
-    public static void main(String[] args) {
+    @BeforeSuite(alwaysRun = true)
+    public void setUpWebDriver() {
         System.setProperty("webdriver.chrome.driver", "/Users/macbook/Downloads/chromedriver");
-        c2();
     }
 
-    private static void c2() {
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    @Test(invocationCount = 10, invocationTimeOut = 10000, threadPoolSize = 5, enabled = false)
+    public void testLoop() {
+        System.out.println(Thread.currentThread().getName());
+    }
+
+    @Test
+    public void verifyDKSD() {
+        WebDriver driver = createWebDriver();
         driver.manage().window().maximize();
         driver.get("https://www.fahasa.com");
 
@@ -39,13 +45,19 @@ public class Main {
             String title = getTextOfHiddenElement(driver, eName);
             inText(title);
 
-            By byPrice = By.xpath(".//span[starts-with(@id,'product-price')]");
-            WebElement ePrice = element.findElement(byPrice);
-            String price = getTextOfHiddenElement(driver, ePrice);
-            inText(price);
+            String attr = getAttributeValueOfHiddenElement(driver, element, "aria-hidden");
+            inText(attr);
         }
 
         driver.quit();
+    }
+
+    private WebDriver createWebDriver() {
+        WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+
+        return driver;
     }
 
     private static void inText(String text) {
@@ -53,8 +65,16 @@ public class Main {
     }
 
     public static String getTextOfHiddenElement(WebDriver driver, WebElement element) {
+        String jsScript = "return arguments[0].innerHTML";
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        String text = js.executeScript("return arguments[0].innerHTML", element).toString();
+        String text = js.executeScript(jsScript, element).toString();
+        return text;
+    }
+
+    public static String getAttributeValueOfHiddenElement(WebDriver driver, WebElement element, String attr) {
+        String jsScript = String.format("return arguments[0].getAttribute('%s')", attr);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String text = js.executeScript(jsScript, element).toString();
         return text;
     }
 }
