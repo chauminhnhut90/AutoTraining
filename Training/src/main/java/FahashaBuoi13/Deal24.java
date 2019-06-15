@@ -31,7 +31,7 @@ public class Deal24 {
         actions.moveToElement(deals24).perform();
     }
 
-    public void getDeal() {
+    public void getDeal24() {
 
         int size = deallist.size();
         for (int i = 0; i < size; i++) {

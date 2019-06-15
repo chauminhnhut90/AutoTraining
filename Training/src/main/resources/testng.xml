@@ -3,7 +3,7 @@
 <suite name="testsuite1" thread-count="2" parallel="methods" >
     <test name="demo" >
         <classes>
-            <class name="FahashaBuoi13.MainB13" />
+            <class name="FahashaBuoi13.Scripts" />
         </classes>
     </test>
 

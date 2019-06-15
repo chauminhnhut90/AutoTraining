@@ -27,10 +27,6 @@ public class Scripts {
         noiBatPage.moveTo();
         noiBatPage.getItems();
         Assert.assertTrue(true);
-        //Assert.assertEquals(false, true);
-        //Assert.assertEquals(false, true);
-        //Assert.assertTrue(true);
-        //Assert.fail();
         webDriver.quit();
 
     }
@@ -39,10 +35,10 @@ public class Scripts {
     public void getDeals24HItems() {
 
         WebDriver webDriver = createWebdriver();
-        webDriver.get("https://www.ahasa.com/");
-        Deals24H deals24H = new Deals24H(webDriver);
-        deals24H.moveToDeal();
-        deals24H.getDeal();
+        webDriver.get("https://www.fahasa.com/");
+        Deal24 deal24 = new Deal24(webDriver);
+        deal24.moveToDeal();
+        deal24.getDeal24();
         webDriver.quit();
         //Assert.assertEquals(false,true);
         Assert.assertTrue(true);
