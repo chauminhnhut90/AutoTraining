@@ -35,16 +35,16 @@ public class Main {
 
     }
 
-    public static void getDeals24HItems(WebDriver webDriver) {
-
-        Deals24H deals24H = new Deals24H(webDriver);
-        deals24H.moveToDeal();
-
-        for (int i = 0; i < 2; i++) {
-            deals24H.getDeal();
-            deals24H.clickNext();
-        }
-        webDriver.quit();
-    }
+//    public static void getDeals24HItems(WebDriver webDriver) {
+//
+//        Deals24H deals24H = new Deals24H(webDriver);
+//        deals24H.moveToDeal();
+//
+//        for (int i = 0; i < 2; i++) {
+//            deals24H.getDeal();
+//            deals24H.clickNext();
+//        }
+//        webDriver.quit();
+//    }
 
 }

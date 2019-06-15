@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="testsuite1" thread-count="2" parallel="methods" >
+    <test name="demo" >
+        <classes>
+            <class name="FahashaBuoi13.MainB13" />
+        </classes>
+    </test>
+
+
+</suite>

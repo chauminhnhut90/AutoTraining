@@ -1,4 +1,8 @@
 package CustomAnnotation;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
-public class RetryCountIfFailed {
+@Retention(RetentionPolicy.RUNTIME)
+public @interface RetryCountIfFailed {
+    int value() default 0;
 }
