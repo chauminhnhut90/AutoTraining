@@ -1,9 +1,8 @@
 package Buoi11;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.concurrent.TimeUnit;
+import com.beust.jcommander.internal.Lists;
+import org.testng.TestNG;
+import java.util.List;
 
 /**
  * @author tuyennguyen
@@ -18,35 +17,13 @@ public class Main_Fahasa {
     * VĂN HỌC
     * LỚP HỌC MẬT NGỮ*/
     public static void main(String[] args){
-        System.setProperty("webdriver.chrome.driver", "D:/Training_SE/chromedriver.exe");
-        WebDriver webDriver = new ChromeDriver();
-        webDriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-        webDriver.manage().window().maximize();
+        TestNG testng = new TestNG();
 
-        HomePage homePage = new HomePage(webDriver);
-        homePage.navigate();
+        List<String> list = Lists.newArrayList();
+        list.add("./src/main/resources/testng.xml");
+        testng.setTestSuites(list);
 
-        NoiBatPage noiBatPage = new NoiBatPage(webDriver);
-        noiBatPage.tabNoiBat();
-        noiBatPage.getProduct();
-
-        System.out.println("-----------------------------------------");
-
-        /*Deal24Page deal24Page = new Deal24Page(webDriver);
-        deal24Page.TabDeal24();
-        deal24Page.getProductName();
-
-        System.out.println("-----------------------------------------");
-
-        VanHocPage vanHocPage = new VanHocPage(webDriver);
-        vanHocPage.TabVanHoc();
-        vanHocPage.getProductName();
-
-        System.out.println("-----------------------------------------");
-
-        LopHocMatNguPage lopHocMatNguPage = new LopHocMatNguPage(webDriver);
-        lopHocMatNguPage.TabLopHocMatNgu();
-        lopHocMatNguPage.getProductName();*/
+        testng.run();
 
 
 
