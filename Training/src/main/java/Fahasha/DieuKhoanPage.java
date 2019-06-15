@@ -26,7 +26,7 @@ public class DieuKhoanPage {
 
     public void moveToFooter(){
         Actions actions = new Actions(webDriver);
-        actions.moveToElement(chinhsachlnk);
+        actions.moveToElement(chinhsachlnk).perform();
     }
 
     public String getCSTitle(){

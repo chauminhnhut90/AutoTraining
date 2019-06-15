@@ -104,7 +104,7 @@ public class FahashaScripts {
 
         if (title1.equals(title2)) {
             Assert.assertTrue(true);
-            System.out.println("Title cua Trang Gioi Thieu Fahasha hien thi dung");
+            System.out.println("Title cua Trang Gioi Thieu AllStuff.Fahasha hien thi dung");
         } else {
             Assert.assertTrue(false);
             System.out.println("Title hien thi sai");
@@ -127,7 +127,7 @@ public class FahashaScripts {
 
         if (title1.equals(title2)) {
             Assert.assertTrue(true);
-            System.out.println("Title cua Trang He Thong Fahasha hien thi dung");
+            System.out.println("Title cua Trang He Thong AllStuff.Fahasha hien thi dung");
         } else {
             Assert.assertTrue(false);
             System.out.println("Title hien thi sai");

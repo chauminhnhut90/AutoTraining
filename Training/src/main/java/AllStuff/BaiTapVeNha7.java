@@ -1,3 +1,5 @@
+package AllStuff;
+
 public class BaiTapVeNha7 {
 
     public static void main(String[] args) {
