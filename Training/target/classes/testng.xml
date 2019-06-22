@@ -14,7 +14,7 @@
         <!--<parameter name="pass" value="123456"/>-->
 
         <classes>
-            <class name="Buoi14.DataProviderScripts" />
+            <class name="BaiTapBuoi15.ScriptsB15" />
             <!--&lt;!&ndash;<class name="Buoi14.ParallelAdmin" />&ndash;&gt; Bo vo cung </test> thi chay cung thread cho cac class-->
         </classes>
 
