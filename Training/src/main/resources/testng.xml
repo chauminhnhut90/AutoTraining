@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Suite1" thread-count="1" data-provider-thread-count="1" parallel="methods">
-    <test name="demo">
+<suite name="suite" thread-count="1" data-provider-thread-count="1" parallel="methods">
+    <test name="test">
         <classes>
-            <class name="buoi12.ExtentReportScript"/>
+            <class name="buoi16.DemoScript"/>
         </classes>
     </test>
 </suite>
